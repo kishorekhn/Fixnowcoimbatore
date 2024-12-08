@@ -114,6 +114,64 @@ body {
   margin: 0;
 }
 
+/* Floating Phone Icon */
+.call-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #25D366;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: pulse 2s infinite; /* Continuous animation */
+}
+
+/* Keyframes for continuous size increase and decrease */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.2); /* Max size */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Optional: style the image inside the icon */
+.call-icon img {
+  width:85px;
+  height: 85px;
+}
+
+/* Floating WhatsApp Icon */
+.whatsapp-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 150px; /* Place above the phone icon */
+  background-color: #25D366; /* WhatsApp Green */
+  padding: 10px;
+  border-radius: 50%; /* Circular shape */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+
+/* Optional: style the image inside the icon */
+.whatsapp-icon img {
+  width: 85px;
+  height: 85px;
+}
+
+
+
+
+
+
+
+
 p {
   color: var(--body-color);
 }
