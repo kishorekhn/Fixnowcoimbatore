@@ -167,11 +167,6 @@ body {
 
 
 
-
-
-
-
-
 p {
   color: var(--body-color);
 }
@@ -746,3 +741,219 @@ iconify-icon.quote {
 .rate {
   color: var(--primary-color);
 }
+
+
+/*--------------------------------------------------------------
+Responsive for all kinds of mobile devices
+--------------------------------------------------------------*/
+
+/* Mobile view */
+@media (max-width: 768px) {
+  /* Body */
+  body {
+    font-size: 14px;
+  }
+
+  /* Header */
+  #primary-header .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  a.nav-link {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+
+  .call-icon,
+  .whatsapp-icon {
+    right: 10px;
+    bottom: 10px;
+    padding: 8px;
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Container */
+  .container-md,
+  .container-lg {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Section Paddings */
+  .padding-small {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
+  .padding-medium {
+    padding-top: 8em;
+    padding-bottom: 8em;
+  }
+
+  .padding-large {
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    padding: 0.8rem 1.6rem;
+  }
+
+  /* Nav-link underline effect */
+  a.nav-link::after {
+    display: none;
+  }
+
+  /* Accordion */
+  .accordion-button {
+    font-size: 1rem;
+  }
+
+  .service-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  /* Service Block Hover */
+  .service-block:hover .service-btn {
+    color: var(--dark-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  /* Pagination */
+  .pagination {
+    font-size: 1rem;
+  }
+
+  .swiper-slide {
+    width: 100%;
+  }
+
+  .project-content .portfolio-img {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .project-content:hover .portfolio-img {
+    opacity: 0.6;
+  }
+
+  .portfolio-description {
+    opacity: 0.8;
+  }
+}
+
+/* For very small devices (phones in portrait mode) */
+@media (max-width: 480px) {
+  /* Body */
+  body {
+    font-size: 13px;
+  }
+
+  /* Header */
+  #primary-header .navbar {
+    padding: 0.5rem;
+  }
+
+  a.nav-link {
+    font-size: 1.1rem;
+    padding: 0.3rem 0;
+  }
+
+  /* Container */
+  .container-md,
+  .container-lg {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Call & WhatsApp Icons */
+  .call-icon,
+  .whatsapp-icon {
+    right: 10px;
+    bottom: 10px;
+    padding: 8px;
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Service Block Hover */
+  .service-block:hover .service-btn {
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Portfolio Image */
+  .project-content .portfolio-img {
+    height: 200px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb-item+.breadcrumb-item::before {
+    font-size: 0.9rem;
+  }
+
+  /* Accordion */
+  .accordion-button {
+    font-size: 0.9rem;
+  }
+
+  /* Modal */
+  .modal-dialog {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .modal-content {
+    padding: 1rem;
+  }
+}
+
+/* Tablet View (Landscape) */
+@media (max-width: 1024px) {
+  /* Header */
+  a.nav-link {
+    font-size: 1.3rem;
+  }
+
+  .service-btn {
+    font-size: 1.1rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Pagination */
+  .pagination {
+    font-size: 1.1rem;
+  }
+}
+
+/* For large screens (Desktop and above) */
+@media (min-width: 1200px) {
+  .container-md {
+    max-width: 1280px;
+  }
+
+  .container-lg {
+    max-width: 1600px;
+  }
+}
+
