@@ -319,24 +319,23 @@
   <section id="brands" class="padding-small">
     <div class="container">
       <h6 class="fst-italic text-capitalize mb-4">
-        <span class="text-primary">|</span> We install or repair all Indian brands
+        <span class="text-primary">|</span> We install or repair all brands like
       </h6>
       <div class="row">
         <div class="col my-4">
-          <a href="#"><img src="images/voltas.png" alt="Voltas" class="brand-image img-fluid"></a>
+          <a href="#"><img src="images\voltas.png" alt="Voltas" class="brand-image img-fluid"></a>
         </div>
         <div class="col my-4">
-          <a href="#"><img src="images/bluestar.png" alt="Blue Star" class="brand-image img-fluid"></a>
+          <a href="#"><img src="images\bluestar png.png" alt="Blue Star" class="brand-image img-fluid"></a>
+        </div>
+       
+        <div class="col my-4">
+          <a href="#"><img src="images/Lg png.png" alt="Lloyd" class="brand-image img-fluid"></a>
         </div>
         <div class="col my-4">
-          <a href="#"><img src="images/godrej.png" alt="Godrej" class="brand-image img-fluid"></a>
+          <a href="#"><img src="images/daikin png.png" alt="Daikin" class="brand-image img-fluid"></a>
         </div>
-        <div class="col my-4">
-          <a href="#"><img src="images/lloyd.png" alt="Lloyd" class="brand-image img-fluid"></a>
-        </div>
-        <div class="col my-4">
-          <a href="#"><img src="images/daikin.png" alt="Daikin" class="brand-image img-fluid"></a>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -612,51 +611,114 @@
     </div>
   </section>
 
-  <section id="quote" class="padding-small">
-    <div class="container text-center">
-      <h3 class="display-6 fw-semibold mb-4">Ask with our Specialists</h3>
-      <form class="contact-form row mt-5">
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
-          <input type="text" id="name" placeholder="Full Name*" class="form-control w-100 ps-3 py-2 rounded-0" required>
-        </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
-          <input type="email" id="email" placeholder="Email*" class="form-control w-100 ps-3 py-2 rounded-0" required>
-        </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
-          <input type="text" id="phone" placeholder="Phone*" class="form-control w-100 ps-3 py-2 rounded-0" required>
-        </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
-          <input type="text" id="address" placeholder="Address*" class="form-control w-100 ps-3 py-2 rounded-0" required>
-        </div>
-        <div class="col-md-12 col-sm-12 mb-4">
-          <textarea class="form-control w-100 ps-3 py-2 rounded-0" rows="6" id="message" placeholder="Message"></textarea>
-        </div>
-        <div class="col-12">
-          <button type="button" class="btn btn-primary btn-slide hover-slide-right mt-4" onclick="sendToWhatsApp()">
-            <span>Sendss now</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
-  
-  
-  <script>
- function sendToWhatsApp() {
-    const phoneNumber = '919585996014'; // Replace with your WhatsApp number in international format
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    const message = document.getElementById('message').value;
+ 
 
-    const whatsappMessage = `Customer's Name: ${name}Email: ${email}Phone: ${phone}AAddress: ${address}Message: ${message}`;
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    window.open(whatsappUrl, '_blank');
-  }
+
+<section id="quote" class="padding-small">
+   <div class="container text-center">
+     <h3 class="display-6 fw-semibold mb-4">Ask with our Specialists</h3>
+     <form class="contact-form row mt-5" onsubmit="sendToWhatsApp(event)">
+       <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
+         <input
+           type="text"
+           id="name"
+           name="name"
+           placeholder="Full Name*"
+           class="form-control w-100 ps-3 py-2 rounded-0"
+           required
+         />
+       </div>
+       <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
+         <input
+           type="email"
+           id="email"
+           name="email"
+           placeholder="Email*"
+           class="form-control w-100 ps-3 py-2 rounded-0"
+           required
+         />
+       </div>
+      
+       <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
+         <input
+           type="text"
+           id="phone"
+           name="phone"
+           placeholder="Phone*"
+           class="form-control w-100 ps-3 py-2 rounded-0"
+           required
+         />
+       </div>
+
+       <div class="col-lg-6 col-md-12 col-sm-12 mb-4">
+         <input
+           type="text"
+           id="address"
+           name="address"
+           placeholder="Address*"
+           class="form-control w-100 ps-3 py-2 rounded-0"
+           required
+         />
+       </div>
+       <div class="col-md-12 col-sm-12 mb-4">
+         <textarea
+           id="message"
+           name="message"
+           class="form-control w-100 ps-3 py-2 rounded-0"
+           rows="6"
+           placeholder="Message"
+           required
+         ></textarea>
+       </div>
+       <div class="col-12">
+         <button type="submit" class="btn btn-primary btn-slide hover-slide-right mt-4">
+           <span>Send Now</span>
+         </button>
+       </div>
+     </form>
+   </div>
+ </section>
+ 
+ <script>
+   function sendToWhatsApp(event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Get form elements
+      const name = document.getElementById("name").value;
+      const email = document.querySelector(".form-control[name='email']").value;
+    const phone = document.querySelector(".form-control[name='phone']").value;
+      const address = document.getElementById("address").value;
+      const message = document.getElementById("message").value;
+
+      // Print values to console
+      console.log("Full Name:", name);
+      console.log("Email:", email);
+      console.log("Phone:", phone);
+      console.log("Address:", address);
+      console.log("Message:", message);
+       // Error handling for empty fields
+       if (!name || !email || !phone || !address || !message) {
+        console.error("Error: All fields are required.");
+        alert("Please fill in all fields before submitting.");
+        return;
+      }
+  
+      // Create the WhatsApp message
+      const whatsappMessage = `Full Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}\nMessage: ${message}`;
+      console.log("Generated WhatsApp Message:", whatsappMessage);
+  
+      // Create the WhatsApp URL
+      const whatsappUrl = `https://wa.me/${918248415443}?text=${encodeURIComponent(whatsappMessage)}`;
+      console.log("WhatsApp URL:", whatsappUrl);
+  
+      // Open WhatsApp with the message
+      window.open(whatsappUrl, '_blank');
+    }
+ </script>
+  
     
-  </script>
+  
   
   
 
