@@ -643,14 +643,14 @@
   
   <script>
  function sendToWhatsApp() {
-    const phoneNumber = '918248415443'; // Replace with your WhatsApp number in international format
+    const phoneNumber = '919585996014'; // Replace with your WhatsApp number in international format
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const address = document.getElementById('address').value;
     const message = document.getElementById('message').value;
 
-    const whatsappMessage = `Full Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AAddress: ${address}%0AMessage: ${message}`;
+    const whatsappMessage = `Customer's Name: ${name}Email: ${email}Phone: ${phone}AAddress: ${address}Message: ${message}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(whatsappUrl, '_blank');
