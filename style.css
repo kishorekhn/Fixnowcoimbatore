@@ -934,5 +934,86 @@ iconify-icon.quote {
 }
 
 
+/*** header responsive------*/
+/* Base styles for header */
+.header-top {
+  background-color: #f8f9fa; /* Optional background color */
+  padding: 10px 0;
+}
+
+.header-top .container {
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+/* Flex container for the header */
+.header-top .d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Brand styling */
+.header-top .navbar-brand h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.header-top .navbar-brand h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #555; /* Optional color */
+}
+
+/* Info list styling */
+.header-top .info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Individual list items */
+.header-top .info li {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Add margin between list items */
+.header-top .info li + li {
+  margin-left: 20px;
+}
+
+/* Phone and time icon styling */
+.header-top .info svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .header-top .d-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-top .navbar-brand {
+    margin-bottom: 15px;
+  }
+
+  .header-top .info {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .header-top .info li {
+    margin: 5px 10px;
+  }
+}
 
 
