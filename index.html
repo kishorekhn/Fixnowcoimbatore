@@ -218,7 +218,7 @@
             <li class="time text-black fw-medium text-capitalize d-flex align-items-center ms-4">
               <svg class="text-primary me-1" width="20" height="20">
                 <use xlink:href="#clock"></use>
-              </svg>7:00 AM to 11:00 PM  (MON-SUN)
+              </svg>24x7 Customer Services
              
             </li>
           </ul>
@@ -290,8 +290,21 @@
     <div class="row align-items-center g-0 bg-secondary">
       <div class="col-lg-6">
         <div class="m-4 p-4 m-lg-5 p-lg-5">
-          <h6 class="text-white"><span class="text-primary">#</span>1 Best AC Services</h6>
-          <h2 class="display-4 fw-bold text-white my-4">AC Services AC cleaning & Home Maintainance in COIMBATORE</h2>
+          <div id="stanza-container">
+            <div class="stanza active">
+              <h6 class="text-white"><span class="text-primary">#</span>1 Best AC Services</h6>
+              <h2 class="display-4 fw-bold text-white my-4">AC Services AC Cleaning & Home Maintenance in COIMBATORE</h2>
+            </div>
+            <div class="stanza">
+              <h6 class="text-white"><span class="text-primary">#</span>1 AC Repair Experts</h6>
+              <h2 class="display-4 fw-bold text-white my-4">AC Repair & Maintenance Service at Affordable Prices</h2>
+            </div>
+            <div class="stanza">
+              <h6 class="text-white"><span class="text-primary">#</span>1 Trusted AC Installation</h6>
+              <h2 class="display-4 fw-bold text-white my-4">Trusted AC Installation Services in COIMBATORE</h2>
+            </div>
+          </div>
+      
           <ul class="info d-flex flex-wrap align-items-center list-unstyled">
             <li class="fw-medium text-white d-flex align-items-center me-4">
               <svg class="text-primary me-1" width="20" height="20">
@@ -309,12 +322,13 @@
               </svg> Installation
             </li>
           </ul>
+      
           <a href="tel:+918098606019" class="btn btn-light btn-bg btn-slide hover-slide-right mt-4">
             <span>Call now</span>
           </a>
-          
         </div>
       </div>
+      
       <div class="col-lg-6">
         <div id="billboardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
@@ -358,6 +372,34 @@
 
     observer.observe(billboard);
   });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const stanzas = document.querySelectorAll(".stanza");
+  let currentIndex = 0;
+
+  function showNextStanza() {
+    // Fade out the current stanza
+    stanzas[currentIndex].classList.add("fade-out");
+
+    setTimeout(() => {
+      // Hide the current stanza after fade-out
+      stanzas[currentIndex].classList.remove("active", "fade-out");
+
+      // Move to the next stanza
+      currentIndex = (currentIndex + 1) % stanzas.length;
+
+      // Show the next stanza with a fade-in effect
+      stanzas[currentIndex].classList.add("active");
+    }, 800); // Match the duration of the fade-out transition
+  }
+
+  // Set interval to change stanzas every 3 seconds
+  setInterval(showNextStanza, 3000);
+});
+
+
 </script>
 
   
@@ -1277,7 +1319,7 @@
               <li class="fw-medium text-capitalize d-flex align-items-center">
                 <svg class="text-primary me-1" width="18" height="18">
                   <use xlink:href="#clock"></use>
-                </svg><a href="#">7:00 AM - 11:PM (MON-SUN)</a>
+                </svg>24x7 Customer services
               </li>
             </ul>
           </div>

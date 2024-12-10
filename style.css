@@ -902,5 +902,37 @@ iconify-icon.quote {
 }
 
 
+/*-------------------*/
+/* Hide all stanzas by default */
+.stanza {
+  display: none;
+}
+
+/* Show only the active stanza */
+.stanza.active {
+  display: block;
+}
+/* Hide all stanzas by default */
+.stanza {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Show only the active stanza with animation */
+.stanza.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add fade-out effect for smooth transitions */
+.stanza.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+
 
 
