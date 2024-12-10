@@ -316,9 +316,30 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <img src="images/billboard.jpg" alt="img" class="img-fluid">
+        <div id="billboardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/billboard.jpg" class="d-block w-100 img-fluid" alt="Billboard 1">
+            </div>
+            <div class="carousel-item">
+              <img src="images/billboard1.jpg" class="d-block w-100 img-fluid" alt="Billboard 2">
+            </div>
+            <div class="carousel-item">
+              <img src="images/billboard2.jpg" class="d-block w-100 img-fluid" alt="Billboard 3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#billboardCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#billboardCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
-    </div>
+      
+   </div>
   </section>
 <!-- script for above section billboard -->
 <script>
