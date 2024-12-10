@@ -113,6 +113,8 @@ body {
   color: var(--body-color);
   margin: 0;
   overflow-x: hidden; 
+ 
+
 }
 
 
@@ -660,12 +662,16 @@ h6 {
 /* 4.1 Header
 /*----------------------------------------------*/
 header {
-  position: sticky;
-  top: 0;                 /* Stick to the top */
-  z-index: 1000;          /* Ensure it stays above other content */
-  background-color: #fff; /* Add background color to avoid transparency issues */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease; /* Smooth transition when hiding and showing */
 }
+
 
 a.nav-link {
   text-transform: capitalize;

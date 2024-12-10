@@ -225,64 +225,7 @@
       </div>
     </nav>
     <hr class="m-0">
-    <nav id="primary-header" class="navbar navbar-expand-lg py-3">
-      <div class="container justify-content-end">
-        <button class="navbar-toggler d-flex d-lg-none justify-content-end border-0 shadow-none p-0" type="button"
-          data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false">
-          <svg class="navbar-icon" width="60" height="60">
-            <use xlink:href="#navbar-icon"></use>
-          </svg>
-        </button>
-        <div class="header-bottom offcanvas offcanvas-end" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
-          <div class="offcanvas-header px-4 mt-3 mb-1">
-            <button type="button" class="btn-close btn-close-black shadow-none" data-bs-dismiss="offcanvas"
-              aria-label="Close" data-bs-target="#bdNavbar"></button>
-          </div>
-          <div class="offcanvas-body align-items-center justify-content-center">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link active p-0" aria-current="page" href="index.html">Home</a>
-              </li>
-             
-              <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link p-0" href="index.html">About</a>
-              </li>
-              <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link p-0" href="index.html">Services</a>
-              </li>
-              <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link p-0" href="index.html">Project</a>
-              </li>
-              <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link p-0" href="index.html">Blog</a>
-              </li>
-              <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link p-0" href="index.html">Contact</a>
-              </li>
-             
-              <li class="nav-item search-dropdown py-3 py-lg-0 ms-3 ms-lg-5 dropdown">
-                <a class="nav-link p-0 search dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                  aria-expanded="false">
-                  <svg class="search" width="24" height="24">
-                    <use xlink:href="#search"></use>
-                  </svg>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 p-3 shadow">
-                  <li class="position-relative d-flex align-items-center p-0">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-primary position-absolute end-0" type="submit">
-                      <svg class="search" width="24" height="24">
-                        <use xlink:href="#search"></use>
-                      </svg>
-                    </button>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
+   
   </header>
 
   <section id="billboard">
@@ -398,8 +341,29 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(showNextStanza, 3000);
 });
 
-
 </script>
+
+<!-- script for header control -->
+ <script>
+  let lastScrollTop = 0; // Variable to store the last scroll position
+const header = document.querySelector('header'); // Get the header element
+
+window.addEventListener('scroll', function() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // If the user scrolls down, hide the header
+  if (currentScroll > lastScrollTop) {
+    header.style.top = "-100px"; // Hide the header by moving it up (or adjust value as needed)
+  } else {
+    // If the user scrolls up, show the header
+    header.style.top = "0"; // Make the header visible again
+  }
+
+  // Update the last scroll position to the current one
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+
+ </script>
 
   
 
