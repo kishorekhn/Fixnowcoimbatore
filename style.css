@@ -268,13 +268,6 @@ body {
   }
 }
 
-/* Styling for logos */
-.brand-image {
-  max-width: 160px;       /* Adjust logo size */
-  margin: 10px;        /* Space between logos */
-}
-
-
 
 
 
@@ -713,6 +706,11 @@ img.brand-image {
 img.brand-image:hover {
   filter: contrast(1);
 }
+/* Styling for logos */
+.brand-image {
+  max-width: 160px;       /* Adjust logo size */
+  margin: -35px;        /* Space between logos */
+}
 
 
 /* 4.3 About Section 
@@ -956,6 +954,32 @@ iconify-icon.quote {
 #header {
   transition: transform 0.3s ease; /* Smooth transition for hiding and showing */
 }
+
+/*-------for billboard opacity----*/
+
+#billboard {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-content {
+  position: relative;
+  z-index: 2;
+}
+
+.overlay-img {
+  object-fit: cover;
+  filter: brightness(25%);
+}
+
+#billboardCarousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/*---------------*/
 
 
 
