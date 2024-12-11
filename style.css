@@ -698,19 +698,74 @@ a.nav-link:hover::after {
 
 /* 4.2 Brand Section
 /*----------------------------------------------*/
-img.brand-image {
- 
-  transition: all 0.3s ease-in;
+/* Ensure the images inside the scroll wrapper have the correct size on all screens */
+.brand-image {
+  width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
 }
 
-img.brand-image:hover {
-  filter: contrast(1);
+/* Make sure the scrolling-wrapper behaves well on all screen sizes */
+.scroll-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden; /* Hide overflowing content */
+  animation: scrollLeft 20s linear infinite; /* Infinite horizontal scrolling */
 }
-/* Styling for logos */
-.brand-image {
-  max-width: 160px;       /* Adjust logo size */
-  margin: -35px;        /* Space between logos */
+
+/* Scroll images within the wrapper */
+.row.flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
 }
+
+/* Prevent hover interruption */
+.scroll-wrapper:hover {
+  animation-play-state: running;
+}
+
+/* Ensure visibility and proper sizing of images */
+.col-sm-4,
+.col-md-2 {
+  flex: 0 0 auto;
+  width: auto; /* Maintain size of images without stretching */
+  margin-right: 15px; /* Add space between images */
+}
+
+@media (max-width: 767px) {
+  /* Scrollable container for small screens */
+  .scrolling-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .row.flex-nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  /* Adjust brand image size for mobile screens */
+  .col-4 {
+    flex: 0 0 auto;
+    width: 33.33%; /* Make each image take up 1/3rd of the screen width */
+    margin-right: 15px;
+  }
+}
+
+/* Infinite scrolling animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move the images to the left */
+  }
+}
+
+
+
+
+
 
 
 /* 4.3 About Section 
@@ -980,6 +1035,11 @@ iconify-icon.quote {
 }
 
 /*---------------*/
+#Text-highlight {
+  color: #ffc107;          /* Attractive Yellow */
+  font-family: 'Poppins', sans-serif; /* Stylish Font Family */
+  font-weight: bold;       /* Bold Text for Emphasis */
+}
 
 
 
