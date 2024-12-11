@@ -198,35 +198,34 @@
 </a>
  <!-- Floating WhatsApp Icon end -->
 
-  <header id="header">
-    <nav class="header-top">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-center py-3">
-          <a class="navbar-brand" href="index.html">
-            <h1>Sreesai Home Care<h2>Coimbatore</h2></h1>
-          </a>
-          <ul class="info d-flex flex-wrap justify-content-end align-items-center list-unstyled m-0">
-            <li class="phone text-black fw-medium text-capitalize d-flex align-items-center ms-4">
-              <a href="tel:+918098606019" class="d-flex align-items-center text-decoration-none text-black">
-                <svg class="text-primary me-1" width="20" height="20">
-                  <use xlink:href="#phone"></use>
-                </svg>
-                8098606019
-              </a>
-            </li>
-            
-            <li class="time text-black fw-medium text-capitalize d-flex align-items-center ms-4">
+ <header id="header">
+  <nav class="header-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center py-3 flex-column flex-md-row">
+        <a class="navbar-brand text-center mb-3 mb-md-0" href="index.html">
+          <h1 class="m-0">Sreesai Home Care</h1>
+        </a>
+        <ul class="info d-flex flex-wrap justify-content-center align-items-center list-unstyled m-0">
+          <li class="phone text-black fw-medium text-capitalize d-flex align-items-center me-4">
+            <a href="tel:+918098606019" class="d-flex align-items-center text-decoration-none text-black">
               <svg class="text-primary me-1" width="20" height="20">
-                <use xlink:href="#clock"></use>
-              </svg>24x7 Customer Services 
-            </li>
-          </ul>
-        </div>
+                <use xlink:href="#phone"></use>
+              </svg>
+              8098606019
+            </a>
+          </li>
+          <li class="time text-black fw-medium text-capitalize d-flex align-items-center">
+            <svg class="text-primary me-1" width="20" height="20">
+              <use xlink:href="#clock"></use>
+            </svg>
+            24x7 Customer Services
+          </li>
+        </ul>
       </div>
-    </nav>
-    <hr class="m-0">
-   
-  </header>
+    </div>
+  </nav>
+</header>
+
 
   <section id="billboard">
     <div class="row align-items-center g-0 bg-secondary">
@@ -275,13 +274,13 @@
         <div id="billboardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/billboard.jpg" class="d-block w-100 img-fluid" alt="Billboard 1">
+              <img src="images/billboard3.jpg" class="d-block w-100 img-fluid" alt="Billboard 1">
             </div>
             <div class="carousel-item">
-              <img src="images/billboard1.jpg" class="d-block w-100 img-fluid" alt="Billboard 2">
+              <img src="images/billboard3.jpg" class="d-block w-100 img-fluid" alt="Billboard 2">
             </div>
             <div class="carousel-item">
-              <img src="images/billboard2.jpg" class="d-block w-100 img-fluid" alt="Billboard 3">
+              <img src="images/billboard3.jpg" class="d-block w-100 img-fluid" alt="Billboard 3">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#billboardCarousel" data-bs-slide="prev">
@@ -344,24 +343,25 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <!-- script for header control -->
- <script>
-  let lastScrollTop = 0; // Variable to store the last scroll position
-const header = document.querySelector('header'); // Get the header element
 
-window.addEventListener('scroll', function() {
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+<script>
+  let lastScroll = 0;
+  const header = document.getElementById("header");
 
-  // If the user scrolls down, hide the header
-  if (currentScroll > lastScrollTop) {
-    header.style.top = "-100px"; // Hide the header by moving it up (or adjust value as needed)
-  } else {
-    // If the user scrolls up, show the header
-    header.style.top = "0"; // Make the header visible again
-  }
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.scrollY;
 
-  // Update the last scroll position to the current one
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
+    if (currentScroll > lastScroll) {
+      // Scrolling down: hide header
+      header.style.transform = "translateY(-100%)";
+    } else {
+      // Scrolling up: show header
+      header.style.transform = "translateY(0)";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
 
  </script>
 
