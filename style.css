@@ -166,8 +166,8 @@ body {
 .call-icon {
   position: fixed;
   right: 20px;
-  bottom: 20px;
-  background-color: #25D366;
+  bottom: 40px;
+  background-color: #74c49a;
   padding: 10px;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -190,18 +190,18 @@ body {
 
 /* Optional: style the image inside the icon */
 .call-icon img {
-  width:85px;
-  height: 85px;
+  width:50px;
+  height: 50px;
 }
 
 /* Floating WhatsApp Icon */
 .whatsapp-icon {
   position: fixed;
   right: 20px;
-  bottom: 150px; /* Place above the phone icon */
-  background-color: #25D366; /* WhatsApp Green */
+  bottom: 130px; /* Place above the phone icon */
+  background-color: #74c49a;
   padding: 10px;
-  border-radius: 50%; /* Circular shape */
+  border-radius: 80%; /* Circular shape */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   animation: pulse 2s infinite;
@@ -209,8 +209,8 @@ body {
 
 /* Optional: style the image inside the icon */
 .whatsapp-icon img {
-  width: 85px;
-  height: 85px;
+  width: 50px;
+  height: 50px;
 }
 
 /* Instead of a fixed width */
@@ -638,8 +638,8 @@ h6 {
 
 /* 4.1 Header
 /*----------------------------------------------*/
+/* General header styling */
 header {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -647,53 +647,62 @@ header {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: top 0.3s ease; /* Smooth transition when hiding and showing */
+  padding: 0.75rem 1rem;     /* Default padding */
 }
 
-
+/* Navigation link styling */
 a.nav-link {
   text-transform: capitalize;
   font-weight: 500;
   color: var(--dark-color);
   font-family: var(--heading-font);
   transition: all 0.3s ease-in-out;
+  padding: 0.5rem 0.75rem;   /* Default padding */
 }
 
+/* Underline effect */
 a.nav-link::after {
   content: "";
-  text-align: center;
   display: block;
   width: 0;
   height: 2px;
   background: var(--primary-color);
-  transition: width 0.9s;
+  transition: width 0.3s;
 }
 
+/* Active, focus, and hover states */
 a.nav-link.active::after,
 a.nav-link:focus::after,
 a.nav-link:hover::after {
   width: 100%;
-  transition: width 0.9s;
 }
 
-
-
+/* Mobile view adjustments */
 @media only screen and (max-width: 990px) {
+  header {
+    padding: 0.25rem 0.5rem;  /* Reduce padding to decrease height */
+    height: auto;             /* Allow the height to adjust based on content */
+  }
+
   a.nav-link {
-    font-size: 1.5rem;
+    font-size: 1rem;          /* Decrease font size for nav links */
+    padding: 0.25rem 0.5rem;  /* Reduce padding for nav links */
   }
 
   a.nav-link.active::after,
   a.nav-link:focus::after,
   a.nav-link:hover::after {
-    width: 0%;
+    width: 0;                 /* Disable underline animation on mobile */
   }
 
-  a.nav-link.active,
-  a.nav-link:focus,
-  a.nav-link:hover {
-    color: var(--primary-color) !important;
+  /* Ensure the nav items stack neatly */
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
+
 
 
 /* 4.2 Brand Section
@@ -702,6 +711,7 @@ a.nav-link:hover::after {
 .brand-image {
   width: 100%; /* Ensure images are responsive */
   height: auto; /* Maintain aspect ratio */
+  max-width: 200px; /* Set a max width to prevent oversized images on desktop */
   object-fit: contain;
 }
 
@@ -732,19 +742,25 @@ a.nav-link:hover::after {
   margin-right: 15px; /* Add space between images */
 }
 
+/* Add adjustments for desktop screens */
+@media (min-width: 768px) {
+  .scroll-wrapper {
+    overflow-x: auto; /* Allow scrolling on desktop if needed */
+    padding: 10px 0; /* Add padding to the top and bottom */
+  }
+
+  .brand-image {
+    max-width: 150px; /* Further limit image size for desktop screens */
+  }
+}
+
+/* Adjust brand image size for mobile screens */
 @media (max-width: 767px) {
-  /* Scrollable container for small screens */
   .scrolling-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  .row.flex-nowrap {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  /* Adjust brand image size for mobile screens */
   .col-4 {
     flex: 0 0 auto;
     width: 33.33%; /* Make each image take up 1/3rd of the screen width */
@@ -961,17 +977,10 @@ iconify-icon.quote {
 }
 
 
-/*** header responsive------*/
 
 
-@media (max-width: 768px) {
-  .header-top .d-flex {
-    flex-direction: row;
-    text-align:justify;
-  }
 
-  
-}
+
 
 
 /* Add padding to the top of the billboard section */
@@ -1033,12 +1042,78 @@ iconify-icon.quote {
   left: 0;
   z-index: 1;
 }
+/* If the header is fixed, add a minimal margin-top to billboard */
+#billboard {
+  margin-top: 0; /* Only necessary if the header is fixed */
+}
+#billboard {
+  padding-top: 0;
+}
+
 
 /*---------------*/
 #Text-highlight {
   color: #ffc107;          /* Attractive Yellow */
   font-family: 'Poppins', sans-serif; /* Stylish Font Family */
   font-weight: bold;       /* Bold Text for Emphasis */
+}
+/* Remove padding from the billboard to bring it closer to the header */
+
+
+
+
+/* Optional: Ensure full height for billboard and header combination */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  padding-top: 0.5rem;   /* Reduce top padding */
+  padding-bottom: 0.5rem; /* Reduce bottom padding */
+  height: auto;          /* Allow height to adjust based on content */
+  line-height: 1.2;      /* Ensure compact line spacing */
+}
+
+/* Ensure the ul is displayed horizontally */
+.info {
+  display: flex;
+  flex-wrap: nowrap;          /* Prevent items from wrapping to the next line */
+  gap: 1rem;                  /* Add some space between the list items */
+  margin: 0;                  /* Remove default margin */
+  padding: 0;                 /* Remove default padding */
+}
+
+/* Style for each li to align horizontally */
+.info li {
+  display: flex;
+  align-items: center;        /* Vertically center the content */
+  margin: 0;                  /* Remove margin to reduce height */
+}
+
+/* Reduce the size of the SVG and text for a compact layout */
+.info li svg {
+  width: 16px;                /* Reduce icon size */
+  height: 16px;
+  margin-right: 0.5rem;       /* Space between icon and text */
+}
+
+/* Reduce padding inside the links */
+.info li a {
+  padding: 0;                 /* Remove padding inside the anchor tags */
+  font-size: 0.9rem;          /* Slightly reduce font size */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 576px) {
+  .info {
+    flex-direction: row;      /* Keep horizontal layout on small screens */
+    justify-content: center;
+    gap: 0.5rem;              /* Reduce gap for tighter spacing */
+  }
+
+  .info li {
+    font-size: 0.8rem;        /* Smaller font size on mobile */
+  }
 }
 
 
