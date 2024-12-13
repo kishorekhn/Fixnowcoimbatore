@@ -118,35 +118,23 @@ body {
 }
 
 
-/* section name:Bill board  effect:transitions*/
+/* section name: Bill board  effect: transitions */
 
-/* Initial state before the transition */
 /* Initial state for text elements */
 #billboard h6,
 #billboard h2,
 #billboard ul li,
 #billboard a.btn {
-  opacity: 0;                   /* Initially hidden */
-  transform: translateY(30px);  /* Start slightly below the original position */
+  opacity: 0;                    /* Initially hidden */
+  transform: translateY(30px);   /* Start slightly below the original position */
   transition: opacity 1s ease, transform 1s ease;
 }
 
 /* Add a delay for a staggered effect */
-#billboard h6 {
-  transition-delay: 0.2s;
-}
-
-#billboard h2 {
-  transition-delay: 0.4s;
-}
-
-#billboard ul li {
-  transition-delay: 0.6s;
-}
-
-#billboard a.btn {
-  transition-delay: 0.8s;
-}
+#billboard h6 { transition-delay: 0.2s; }
+#billboard h2 { transition-delay: 0.4s; }
+#billboard ul li { transition-delay: 0.6s; }
+#billboard a.btn { transition-delay: 0.8s; }
 
 /* Trigger the transition when the section is in view */
 #billboard.show h6,
@@ -157,7 +145,57 @@ body {
   transform: translateY(0);  /* Move to the original position */
 }
 
+#billboard {
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;  /* Only necessary if the header is fixed */
+  padding-top: 5rem;  /* Adjust this value based on the header's height */
+}
 
+#billboard .col-lg-6 {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+/* Ensure the carousel fills the entire height of the column */
+#billboardCarousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#billboardCarousel .carousel-inner,
+#billboardCarousel .carousel-item,
+#billboardCarousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 576px) {
+  #billboard {
+    padding-top: 6rem; /* Slightly more padding for smaller screens */
+  }
+
+  #billboard .m-4, #billboard .p-4, 
+  #billboard .m-lg-5, #billboard .p-lg-5 {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  /* Adjust heading sizes for mobile view */
+  #billboard h2 { font-size: 1.75rem; }
+  #billboard h6 { font-size: 1rem; }
+}
+#billboard {
+  margin-top: 0;
+  padding-top: 0; /* Adjust this value to fit the billboard closer to the header */
+}
 
 
 
@@ -922,27 +960,7 @@ iconify-icon.quote {
 }
 
 /*------------------------*/
-/* Ensure the column takes up half the width and full height */
-#billboard .col-lg-6 {
-  display: flex;
-  align-items: stretch;
-  height: 100%;
-}
 
-/* Ensure the carousel fills the entire height of the column */
-#billboardCarousel {
-  width: 100%;
-  height: 100%;
-}
-
-/* Ensure carousel images cover the full space */
-#billboardCarousel .carousel-inner,
-#billboardCarousel .carousel-item,
-#billboardCarousel .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 
 /*-------------------*/
@@ -984,36 +1002,7 @@ iconify-icon.quote {
 
 
 /* Add padding to the top of the billboard section */
-#billboard {
-  padding-top: 5rem; /* Adjust this value based on the header's height */
-}
 
-/* Responsive adjustments for mobile view */
-@media (max-width: 576px) {
-  #billboard {
-    padding-top: 6rem; /* Slightly more padding for smaller screens */
-  }
-
-  /* Optional: Reduce padding inside the billboard content */
-  #billboard .m-4, #billboard .p-4 {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  #billboard .m-lg-5, #billboard .p-lg-5 {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  /* Optional: Adjust heading sizes for mobile view */
-  #billboard h2 {
-    font-size: 1.75rem;
-  }
-
-  #billboard h6 {
-    font-size: 1rem;
-  }
-}
 /*--------------------*/
 #header {
   transition: transform 0.3s ease; /* Smooth transition for hiding and showing */
@@ -1021,10 +1010,7 @@ iconify-icon.quote {
 
 /*-------for billboard opacity----*/
 
-#billboard {
-  position: relative;
-  overflow: hidden;
-}
+
 
 .text-content {
   position: relative;
@@ -1036,19 +1022,6 @@ iconify-icon.quote {
   filter: brightness(25%);
 }
 
-#billboardCarousel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-/* If the header is fixed, add a minimal margin-top to billboard */
-#billboard {
-  margin-top: 0; /* Only necessary if the header is fixed */
-}
-#billboard {
-  padding-top: 0;
-}
 
 
 /*---------------*/
@@ -1057,7 +1030,7 @@ iconify-icon.quote {
   font-family: 'Poppins', sans-serif; /* Stylish Font Family */
   font-weight: bold;       /* Bold Text for Emphasis */
 }
-/* Remove padding from the billboard to bring it closer to the header */
+
 
 
 
