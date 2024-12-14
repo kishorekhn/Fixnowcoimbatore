@@ -223,125 +223,111 @@
 </header>
 
 
-<section id="billboard" class="position-relative">
-  <div class="row align-items-center g-0 bg-secondary position-relative">
-    <div class="col-lg-6 position-relative text-content">
-      <div class="m-4 p-4 m-lg-5 p-lg-5">
-        <div id="stanza-container">
-          <div class="stanza active">
-            <h6 class="text-white">
-              <span class="text-primary">#</span>1 Best AC Services</span>
-            </h6>
-            <h2 class="display-4 fw-bold text-white my-4">
-              <span id="Text-highlight">AC Services</span> AC Cleaning & Home Maintenance.  <span id="Text-highlight">Cools</span> you in COIMBATORE
-            </h2>
-          </div>
-          <div class="stanza">
-            <h6 class="text-white">
-              <span class="text-primary">#</span>1 Washing Machine Repair Experts
-            </h6>
-            <h2 class="display-4 fw-bold text-white my-4">
-              <span id="Text-highlight">Stay Fresh </span>With our Experts <span id="Text-highlight">Washing Machine</span>Services 
-            </h2>
-          </div>
-          <div class="stanza">
-            <h6 class="text-white">
-              <span class="text-primary">#</span>1 Trusted For Refrigerator Service
-            </h6>
-            <h2 class="display-4 fw-bold text-white my-4">
-              <span id="Text-highlight"> Chill</span> with Freshness by our  <span id="Text-highlight">Quality Services </span> On Refrigerator
-            </h2>
-          </div>
-        </div>
-        
-        
-        <ul class="info d-flex flex-wrap align-items-center list-unstyled">
-          <li class="fw-medium text-white d-flex align-items-center me-4">
-            <svg class="text-primary me-1" width="20" height="20">
-              <use xlink:href="#check-circle"></use>
-            </svg> Servicing
-          </li>
-          <li class="fw-medium text-white d-flex align-items-center me-4">
-            <svg class="text-primary me-1" width="20" height="20">
-              <use xlink:href="#check-circle"></use>
-            </svg> Repairs
-          </li>
-          <li class="fw-medium text-white d-flex align-items-center me-4">
-            <svg class="text-primary me-1" width="20" height="20">
-              <use xlink:href="#check-circle"></use>
-            </svg> Installation
-          </li>
-        </ul>
-        
-        <a href="tel:+918098606019" class="btn btn-light btn-bg btn-slide hover-slide-right mt-4">
-          <span>Call now</span>
-        </a>
+<section id="billboarding">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="images/billboard1.jpg" alt="Image 1" class="dimmed">
+      <div class="text-overlay">
+        <h6 class="text-white">
+          <span class="text-primary">#</span>1 Best AC Services
+        </h6>
+        <h2 class="display-4 fw-bold text-white my-4">
+          <span id="Text-highlight">AC Services</span> AC Cleaning & Home Maintenance. <span id="Text-highlight">Cools</span> you in COIMBATORE
+        </h2>
       </div>
     </div>
-    
-    <div class="col-lg-6 position-absolute top-0 start-0 w-100 h-100">
-      <div id="billboardCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
-        <div class="carousel-inner h-100">
-          <div class="carousel-item active h-100">
-            <img src="images/billboard1.jpg" class="d-block w-100 h-100 img-fluid overlay-img" alt="Billboard 1">
-          </div>
-          <div class="carousel-item h-100">
-            <img src="images/billboard2.jpg" class="d-block w-100 h-100 img-fluid overlay-img" alt="Billboard 2">
-          </div>
-          <div class="carousel-item h-100">
-            <img src="images/billboard3.jpg" class="d-block w-100 h-100 img-fluid overlay-img" alt="Billboard 3">
-          </div>
-        </div>
+    <div class="slide">
+      <img src="images/billboard2.jpg" alt="Image 2">
+      <div class="text-overlay">
+        <h6 class="text-white">
+          <span class="text-primary">#</span>1 Washing Machine Repair Experts
+        </h6>
+        <h2 class="display-4 fw-bold text-white my-4">
+          <span id="Text-highlight">Stay Fresh</span> With our Experts <span id="Text-highlight">Washing Machine</span> Services
+        </h2>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="images/billboard3.jpg" alt="Image 3">
+      <div class="text-overlay">
+        <h6 class="text-white">
+          <span class="text-primary">#</span>1 Trusted For Refrigerator Service
+        </h6>
+        <h2 class="display-4 fw-bold text-white my-4">
+          <span id="Text-highlight">Chill</span> with Freshness by our <span id="Text-highlight">Quality Services</span> On Refrigerator
+        </h2>
       </div>
     </div>
   </div>
+
+  <!-- Call-to-Action Button -->
+  <div class="call-btn" >
+    <a href="tel:+918098606019" class="btn btn-light mt-4">Call now</a>
+  </div>
 </section>
 
-<!-- script for above section billboard -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const billboard = document.getElementById("billboard");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            billboard.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.5 } // Trigger when 50% of the element is visible
-    );
 
-    observer.observe(billboard);
-  });
-</script>
+
+
+
+
+
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const stanzas = document.querySelectorAll(".stanza");
-  let currentIndex = 0;
+ let slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
 
-  function showNextStanza() {
-    // Fade out the current stanza
-    stanzas[currentIndex].classList.add("fade-out");
+// Initially show the first slide
+slides[currentIndex].classList.add('active');
 
-    setTimeout(() => {
-      // Hide the current stanza after fade-out
-      stanzas[currentIndex].classList.remove("active", "fade-out");
+// Function to show the current slide
+function showSlide() {
+  let currentSlide = slides[currentIndex];
 
-      // Move to the next stanza
-      currentIndex = (currentIndex + 1) % stanzas.length;
+  // Reset text and image states
+  currentSlide.querySelector('img').classList.remove('dimmed');
+  currentSlide.querySelector('.text-overlay').style.opacity = '0';
 
-      // Show the next stanza with a fade-in effect
-      stanzas[currentIndex].classList.add("active");
-    }, 800); // Match the duration of the fade-out transition
-  }
+  // Ensure the current slide is active
+  currentSlide.classList.add('active');
 
-  // Set interval to change stanzas every 3 seconds
-  setInterval(showNextStanza, 3000);
-});
+  // Dim the image after it appears (after 1 second delay)
+  setTimeout(() => {
+    currentSlide.querySelector('img').classList.add('dimmed');
+  }, 1000);
 
+  // Show the text overlay after the image dims (after 2 seconds delay)
+  setTimeout(() => {
+    currentSlide.querySelector('.text-overlay').style.opacity = '1';
+  }, 2000);
+}
+
+// Function to hide the current slide and move to the next
+function showNextSlide() {
+  let currentSlide = slides[currentIndex];
+  currentSlide.classList.remove('active');
+  currentSlide.querySelector('img').classList.remove('dimmed');
+  currentSlide.querySelector('.text-overlay').style.opacity = '0';
+
+  // Move to the next slide
+  currentIndex = (currentIndex + 1) % slides.length;
+
+  // Show the next slide
+  showSlide();
+}
+
+// Initial call to show the first slide
+showSlide();
+
+// Change slide every 6 seconds
+setInterval(showNextSlide, 6000);
 </script>
+
+
+
+
+
+
 
 <!-- script for header control -->
 
