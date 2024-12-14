@@ -232,7 +232,9 @@
           <span class="text-primary">#</span>1 Best AC Services
         </h6>
         <h2 class="display-4 fw-bold text-white">
-          <span id="Text-highlight">AC Services</span> AC Cleaning & Home Maintenance. <span id="Text-highlight">Cools</span> you in COIMBATORE
+            AC<span id="Text-highlight"> Services</span>
+            AC<span id="Text-highlight"> Cleaning </span>We 
+            <span id="Text-highlight">Cools</span> you in COIMBATORE
         </h2>
       </div>
        <!-- Call-to-Action Button -->
@@ -247,7 +249,7 @@
           <span class="text-primary">#</span>1 Washing Machine Repair Experts
         </h6>
         <h2 class="display-4 fw-bold text-white ">
-          <span id="Text-highlight">Stay Fresh</span> With our Experts <span id="Text-highlight">Washing Machine</span> Services
+          <span id="Text-highlight">Stay Fresh</span> by our<span id="Text-highlight"> Washing Machine</span> Services
         </h2>
       </div>
        <!-- Call-to-Action Button -->
@@ -262,7 +264,7 @@
           <span class="text-primary">#</span>1 Trusted For Refrigerator Service
         </h6>
         <h2 class="display-4 fw-bold text-white my-4">
-          <span id="Text-highlight">Chill</span> with Freshness by our <span id="Text-highlight">Quality Services</span> On Refrigerator
+          <span id="Text-highlight">Chill</span>with Freshness by<span id="Text-highlight"> Refrigerator </span>  Services
         </h2>
       </div>
        <!-- Call-to-Action Button -->
@@ -280,7 +282,7 @@
 
 
 <script>
- let slides = document.querySelectorAll('.slide');
+let slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
 
 // Initially show the first slide
@@ -291,7 +293,8 @@ function showSlide() {
   let currentSlide = slides[currentIndex];
 
   // Reset text and image states
-  currentSlide.querySelector('img').classList.remove('dimmed');
+  let img = currentSlide.querySelector('img');
+  img.style.filter = 'none'; // Remove any previous dimming
   currentSlide.querySelector('.text-overlay').style.opacity = '0';
 
   // Ensure the current slide is active
@@ -299,7 +302,7 @@ function showSlide() {
 
   // Dim the image after it appears (after 1 second delay)
   setTimeout(() => {
-    currentSlide.querySelector('img').classList.add('dimmed');
+    img.style.filter = 'brightness(35%)'; // Increase the dim effect
   }, 1000);
 
   // Show the text overlay after the image dims (after 2 seconds delay)
@@ -312,7 +315,7 @@ function showSlide() {
 function showNextSlide() {
   let currentSlide = slides[currentIndex];
   currentSlide.classList.remove('active');
-  currentSlide.querySelector('img').classList.remove('dimmed');
+  currentSlide.querySelector('img').style.filter = 'none';
   currentSlide.querySelector('.text-overlay').style.opacity = '0';
 
   // Move to the next slide
@@ -327,6 +330,7 @@ showSlide();
 
 // Change slide every 6 seconds
 setInterval(showNextSlide, 6000);
+
 </script>
 
 
@@ -339,7 +343,7 @@ setInterval(showNextSlide, 6000);
 
 
 
-<section id="brands" class="padding-small overflow-hidden">
+<section id="brands" style="margin-top: -100px;" class="padding-small overflow-hidden">
   <div class="container">
     <h6 class="fst-italic text-capitalize mb-4">
       <span class="text-primary">|</span> We install or repair all brands like
