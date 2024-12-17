@@ -1003,13 +1003,13 @@ html, body {
 @media (max-width: 1024px) {
   #billboarding { height: 75vh; }
   .call-btn .btn { padding: 14px 28px; font-size: 18px; }
-  .text-overlay { font-size: 1.6em; top: 8%; }
+ 
 }
 
 @media (max-width: 768px) {
   #billboarding { height: 60vh; }
   .call-btn .btn { padding: 12px 25px; font-size: 16px; }
-  .text-overlay { font-size: 1.4em; padding: 0 10px; top: 8%; }
+  .text-overlay { font-size: 1.4em; padding: 0 20px; top: 8%; }
 }
 
 @media (max-width: 480px) {
@@ -1018,26 +1018,48 @@ html, body {
   .text-overlay { font-size: 1.2em; padding: 0 15px; top: 5%; }
 }
 
-.text-overlay {
-  top: 8%;                /* Move text upward */
-  max-width: 700px;       /* Restrict width for better wrapping */
+
+/*__________*/
+/* Default font size for large screens */
+#stanza {
+  font-size: 2em;
 }
 
-.text-overlay h2 {
-  font-size: 1.8em;       /* Reduce font size */
-  line-height: 1.2;       /* Compact line spacing */
+/* Medium screens (up to 1024px) */
+@media (max-width: 1024px) {
+  #stanza {
+    font-size: 1.8em;
+  }
 }
 
-/* Responsive changes for mobile */
+/* Tablets and smaller laptops (up to 768px) */
 @media (max-width: 768px) {
-  .text-overlay {
-    top: 6%;              /* Move text higher on mobile */
-  }
-  
-  .text-overlay h2 {
-    font-size: 1.5em;     /* Smaller font size for mobile */
+  #stanza {
+    font-size: 1.6em;
   }
 }
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  #stanza {
+    font-size: 1.4em;
+  }
+}
+
+/* Small phones (up to 375px) */
+@media (max-width: 375px) {
+  #stanza {
+    font-size: 1.2em;
+  }
+}
+
+/* Very small phones (up to 320px) */
+@media (max-width: 320px) {
+  #stanza {
+    font-size: 1.1em;
+  }
+}
+
 
 
 

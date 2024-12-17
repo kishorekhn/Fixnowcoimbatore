@@ -231,11 +231,11 @@
         <h6 class="text-white">
           <span class="text-primary">#</span>1 Best AC Services
         </h6>
-        <h2 class="display-4 fw-bold text-white">
+        <p class=" fw-bold text-white">
             AC<span id="Text-highlight"> Services</span>
             AC<span id="Text-highlight"> Cleaning </span>We 
             <span id="Text-highlight">Cools</span> you in COIMBATORE
-        </h2>
+        </p>
       </div>
        <!-- Call-to-Action Button -->
        <div class="call-btn" >
@@ -248,9 +248,9 @@
         <h6 class="text-white">
           <span class="text-primary">#</span>1 Washing Machine Repair Experts
         </h6>
-        <h2 class="display-4 fw-bold text-white ">
+        <p class=" fw-bold text-white ">
           <span id="Text-highlight">Stay Fresh</span> by our<span id="Text-highlight"> Washing Machine</span> Services
-        </h2>
+        </p>
       </div>
        <!-- Call-to-Action Button -->
        <div class="call-btn" >
@@ -263,9 +263,9 @@
         <h6 class="text-white">
           <span class="text-primary">#</span>1 Trusted For Refrigerator Service
         </h6>
-        <h2 class="display-4 fw-bold text-white my-4">
-          <span id="Text-highlight">Chill</span>with Freshness by<span id="Text-highlight"> Refrigerator </span>  Services
-        </h2>
+        <p id="stanza "class=" fw-bold text-white my-4">
+          <span id="Text-highlight">Chill</span> with Freshness by<span id="Text-highlight"> Refrigerator </span>  Services
+        </p>
       </div>
        <!-- Call-to-Action Button -->
       <div class="call-btn" >
@@ -282,56 +282,56 @@
 
 
 <script>
-let slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
-
-// Initially show the first slide
-slides[currentIndex].classList.add('active');
-
-// Function to show the current slide
-function showSlide() {
-  let currentSlide = slides[currentIndex];
-
-  // Reset text and image states
-  let img = currentSlide.querySelector('img');
-  img.style.filter = 'none'; // Remove any previous dimming
-  currentSlide.querySelector('.text-overlay').style.opacity = '0';
-
-  // Ensure the current slide is active
-  currentSlide.classList.add('active');
-
-  // Dim the image after it appears (after 1 second delay)
-  setTimeout(() => {
-    img.style.filter = 'brightness(35%)'; // Increase the dim effect
-  }, 1000);
-
-  // Show the text overlay after the image dims (after 2 seconds delay)
-  setTimeout(() => {
-    currentSlide.querySelector('.text-overlay').style.opacity = '1';
-  }, 2000);
-}
-
-// Function to hide the current slide and move to the next
-function showNextSlide() {
-  let currentSlide = slides[currentIndex];
-  currentSlide.classList.remove('active');
-  currentSlide.querySelector('img').style.filter = 'none';
-  currentSlide.querySelector('.text-overlay').style.opacity = '0';
-
-  // Move to the next slide
-  currentIndex = (currentIndex + 1) % slides.length;
-
-  // Show the next slide
+  let slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+  
+  // Initially show the first slide
+  slides[currentIndex].classList.add('active');
+  
+  // Function to show the current slide
+  function showSlide() {
+    let currentSlide = slides[currentIndex];
+  
+    // Reset text and image states
+    let img = currentSlide.querySelector('img');
+    img.style.filter = 'none'; // Remove any previous dimming
+    currentSlide.querySelector('.text-overlay').style.opacity = '0';
+  
+    // Ensure the current slide is active
+    currentSlide.classList.add('active');
+  
+    // Dim the image after it appears (after 1 second delay)
+    setTimeout(() => {
+      img.style.filter = 'brightness(35%)'; // Increase the dim effect
+    }, 1000);
+  
+    // Show the text overlay after the image dims (after 2 seconds delay)
+    setTimeout(() => {
+      currentSlide.querySelector('.text-overlay').style.opacity = '1';
+    }, 2000);
+  }
+  
+  // Function to hide the current slide and move to the next
+  function showNextSlide() {
+    let currentSlide = slides[currentIndex];
+    currentSlide.classList.remove('active');
+    currentSlide.querySelector('img').style.filter = 'none';
+    currentSlide.querySelector('.text-overlay').style.opacity = '0';
+  
+    // Move to the next slide
+    currentIndex = (currentIndex + 1) % slides.length;
+  
+    // Show the next slide
+    showSlide();
+  }
+  
+  // Initial call to show the first slide
   showSlide();
-}
-
-// Initial call to show the first slide
-showSlide();
-
-// Change slide every 6 seconds
-setInterval(showNextSlide, 6000);
-
-</script>
+  
+  // Change slide every 6 seconds
+  setInterval(showNextSlide, 6000);
+  
+  </script>
 
 
 
