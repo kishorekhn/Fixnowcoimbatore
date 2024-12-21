@@ -1019,47 +1019,35 @@ html, body {
 }
 
 
-/*__________*/
-/* Default font size for large screens */
-#stanza {
-  font-size: 2em;
+
+
+
+
+/*77777777777777777*/
+
+
+/* General Styles for Paragraph */
+.text-overlay p {
+  font-size: 20px; /* Default font size */
+  line-height: 1.5; /* Adjust line spacing */
+  margin: 10px 0;
 }
 
-/* Medium screens (up to 1024px) */
-@media (max-width: 1024px) {
-  #stanza {
-    font-size: 1.8em;
+/* Responsive Styling for Larger Screens */
+@media (min-width: 768px) {
+  .text-overlay p {
+    font-size: 30px; /* Larger font size for desktops */
+    line-height: 1.8; /* Adjusted line height for readability */
+    padding: 0 15%; /* Add padding for better alignment */
+    text-align: center; /* Center align text if necessary */
   }
 }
 
-/* Tablets and smaller laptops (up to 768px) */
-@media (max-width: 768px) {
-  #stanza {
-    font-size: 1.6em;
+/* Styling for Very Large Screens */
+@media (min-width: 1200px) {
+  .text-overlay p {
+    font-size: 45px; /* Even larger font size for large desktops */
+    line-height: 2; /* Comfortable line height for wider screens */
+    padding: 0 20%; /* Increase padding for proper layout */
   }
 }
-
-/* Mobile devices (up to 480px) */
-@media (max-width: 480px) {
-  #stanza {
-    font-size: 1.4em;
-  }
-}
-
-/* Small phones (up to 375px) */
-@media (max-width: 375px) {
-  #stanza {
-    font-size: 1.2em;
-  }
-}
-
-/* Very small phones (up to 320px) */
-@media (max-width: 320px) {
-  #stanza {
-    font-size: 1.1em;
-  }
-}
-
-
-
-
