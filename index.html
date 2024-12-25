@@ -182,6 +182,73 @@
     
 
   </svg>
+<!-- logo video-->
+
+<!-- Splash Screen Section -->
+<div id="splash-screen">
+  <div id="overlay"></div>
+  <img src="D:\logo_fixnow.gif" alt="Loading">
+</div>
+
+<style>
+  /* Splash Screen Styles for Desktop */
+  #splash-screen {
+  position: fixed;
+  top: 0;
+  transform: translateY(0%); /* Default value for larger screens */
+  left: 0;
+  width: 100vw; /* Ensure full width */
+  height: 100vh; /* Ensure full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it appears above other content */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  #splash-screen {
+    transform: translateY(-5%); /* Less upward shift for medium screens */
+  }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 370px) {
+  #splash-screen {
+    transform: translateY(1); /* No upward shift for small screens */
+  }
+}
+
+  #splash-screen img {
+    max-width: 100%; /* Limit GIF size for desktop view */
+    max-height: 100%; /* Ensure it doesn't overflow the screen */
+    z-index: 1; /* Ensure GIF appears above the overlay */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Prevent scrolling while splash screen is active */
+  }
+</style>
+
+<script>
+  // Splash Screen Logic
+  window.addEventListener('load', () => {
+    const splashScreen = document.getElementById('splash-screen');
+
+    // Hide splash screen after 4 seconds
+    setTimeout(() => {
+      splashScreen.style.display = 'none';
+    }, 4000); // Adjust time as needed
+  });
+</script>
+
+
+
+
+
  
 <!-- Floating Call Icon -->
 <a href="tel:+918098606019" class="call-icon d-flex justify-content-center align-items-center" title="Call Us">
@@ -198,9 +265,12 @@
   <nav class="header-top">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center py-3 flex-column flex-md-row">
-      <a class="navbar-brand text-center mb-3 mb-md-0 d-flex align-items-center" href="index.html">
+        <!-- Logo and Brand -->
+        <a class="navbar-brand text-center mb-3 mb-md-0 d-flex align-items-center" href="index.html">
+          <img src="D:\fixnow_logo2.png" alt="Fixnow Logo" class="me-2" style="height: 100px; width: auto; object-fit: contain;">
           <h1 class="m-0">Fixnow Home care</h1>
         </a>
+        <!-- Contact Information -->
         <ul class="info d-flex flex-wrap justify-content-center align-items-center list-unstyled m-0">
           <li class="phone text-black fw-medium text-capitalize d-flex align-items-center me-4">
             <a href="tel:+918098606019" class="d-flex align-items-center text-decoration-none text-black">
@@ -221,6 +291,8 @@
     </div>
   </nav>
 </header>
+
+
 
 
 
